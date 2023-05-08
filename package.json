@@ -1,0 +1,21 @@
+{
+  "name": "playwright-console-duplicates-on-webkit-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:webkit": "npm run test -- --project=webkit",
+    "test:chromium": "npm run test -- --project=chromium",
+    "test:firefox": "npm run test -- --project=firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0",
+    "playwright": "^1.33.0",
+    "typescript": "^5.0.4"
+  }
+}
