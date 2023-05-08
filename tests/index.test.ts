@@ -35,6 +35,7 @@ test('prints a "hello world" console message', async ({ page }) => {
 
     expect(consoleMessages.length).toBe(2);
     expect(consoleMessages[0]).toBe('hello world!');
+    expect(consoleMessages[1]).toBe('hello world, again!');
 });
 
 async function wait(ms: number): Promise<void> {
