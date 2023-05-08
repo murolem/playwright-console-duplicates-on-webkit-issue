@@ -3,7 +3,6 @@ export function sayHello() {
     debugLog('foo');
     debugLog('bar');
     debugLog('foo');
-
     console.log('hello world!');
 
     debugLog('and saying hello again...');
