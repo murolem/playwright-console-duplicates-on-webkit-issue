@@ -1,17 +1,16 @@
 import { test, expect, ConsoleMessage } from '@playwright/test';
 import { sayHello } from '../src/index.ts';
 
-test.beforeEach(async ({ page }) => {
+test('prints a "hello world" console message', async ({ page }) => {
     // expose a function `debugLog` which does nothing by itself
     // but if there is `debugLogHandler` function defined, it will be called with given message `str` 
+    // in this example, `debugLogHandler` is never defined
     await page.exposeFunction('debugLog', (str: string) => {
         if (debugLogHandler) {
             debugLogHandler(str);
         }
     });
-})
 
-test('prints a "hello world" console message', async ({ page }) => {
     // define array of future console message and a listener which will be adding them here
     const consoleMessages: string[] = [];
     const consoleEventListener = (consoleMsg: ConsoleMessage) => {
