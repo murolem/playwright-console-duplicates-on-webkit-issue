@@ -3,11 +3,11 @@ import { sayHello } from '../src/index.ts';
 
 test('prints a "hello world" console message', async ({ page }) => {
     // expose a function `debugLog` which does nothing by itself
-    // but if there is `debugLogHandler` function defined, it will be called with given message `str` 
-    // in this example, `debugLogHandler` is never defined
+    // check if some other function exists
     await page.exposeFunction('debugLog', (str: string) => {
-        if (debugLogHandler) {
-            debugLogHandler(str);
+        // @ts-ignore
+        if(window['somePropertyThatDoesNotExists']) {
+            // do something here...
         }
     });
 
