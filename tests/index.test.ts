@@ -33,7 +33,7 @@ test('prints a "hello world" console message', async ({ page }) => {
     // log collected messages
     console.log('console messages:', JSON.stringify(consoleMessages, null, 2));
 
-    expect(consoleMessages.length).toBe(1);
+    expect(consoleMessages.length).toBe(2);
     expect(consoleMessages[0]).toBe('hello world!');
 });
 
